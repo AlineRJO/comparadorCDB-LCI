@@ -6,42 +6,43 @@
     
   <div class="po-row">
     <div class="po-row">
-      <po-input [p-label]="'%CDB'" formControlName="cdbValue" class="po-md-3"></po-input>      
-      <po-input [p-label]="'Prazo (dias)'" formControlName="daysValue" class="po-md-3"></po-input>      
-      <po-input [p-label]="'% LCI'" formControlName="lciValue" class="po-md-3"></po-input>
+      <po-number p-label="CDB (%)" formControlName="cdbValue" class="po-md-3"></po-number>      
+      <po-number p-label="Prazo (dias)" formControlName="daysValue" class="po-md-3"></po-number>      
+      <po-number p-label="LCI (%)" formControlName="lciValue" class="po-md-3"></po-number>
     </div>
 
     <div class="po-row">
-      <po-input [p-label]="'IR cobrado'" formControlName="irValue" class="po-md-3" p-disabled="true"></po-input>
+      <po-input p-label="IR cobrado (%)" formControlName="irValue" class="po-md-3" p-disabled="true"></po-input>
     </div> 
   </div>
+
+  <po-button class="po-pt-2 po-pb-4" p-label="Calcular" (p-click)="calculate()" [p-disabled]="!formValid"></po-button>
   
   
   <h3 class="po-pb-2">Comparador</h3>
   <div class="po-row po-pb-4">
     <po-input [p-label]="'CDB => LCI'" formControlName="cdbResult" class="po-md-3" p-disabled="true"></po-input>
-    <po-input [p-label]="'LCI => CDB'" class="po-md-3" formControlName="lciResult" p-disabled="true"></po-input>
+    <po-input [p-label]="'LCI => CDB'" formControlName="lciResult" class="po-md-3" p-disabled="true"></po-input>
   </div>
 
-
-  <h3>Tabela inforativa:</h3>
-  <div class="po-row" style="border: 3px solid purple;">
+  <h3>Tabela informativa:</h3>
+  <div class="po-md-5" style="border: 3px solid purple;">
     
-    <div class="row">
-      <div class="po-md-4">x dias <= 180</div> 
-      <div class="po-md-3">22.50%</div> 
+    <div class="po-row">
+      <div class="po-md-6">x dias <= 180</div> 
+      <div class="po-md-6">22.50%</div> 
     </div>
-    <div class="row">
-      <div class="po-md-4">181 <= x <= 360</div> 
-      <div class="po-md-3">20.00%</div> 
+    <div class="po-row">
+      <div class="po-md-6">181 <= x <= 360</div> 
+      <div class="po-md-6">20.00%</div> 
     </div>
-    <div class="row">
-      <div class="po-md-4">361 <= x <= 720</div> 
-      <div class="po-md-3">17.50%</div> 
+    <div class="po-row">
+      <div class="po-md-6">361 <= x <= 720</div> 
+      <div class="po-md-6">17.50%</div> 
     </div>
-    <div class="row">
-      <div class="po-md-4">x dias >= 721</div> 
-      <div class="po-md-3">15.00%</div> 
+    <div class="po-row">
+      <div class="po-md-6">x dias >= 721</div> 
+      <div class="po-md-6">15.00%</div> 
     </div>
   </div>
 </div>
